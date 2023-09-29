@@ -10,11 +10,17 @@ public class DefensaController : MonoBehaviour
     [SerializeField] private GeneradorEnemigos enemigos;
     [SerializeField] private GameManagerController gameManager;
 
-    // Start is called before the first frame update
+
+    private float minX, maxX, minY, maxY;
+
+ 
     void Start()
     {
         myrb = GetComponent<Rigidbody2D>();
-
+        minX = -6.22f;
+        maxX = 6.22f;
+        minY = -4.55f;
+        maxY = 4.55f;
 
     }
 
@@ -31,7 +37,13 @@ public class DefensaController : MonoBehaviour
     void onMovement()
     {
         Vector2 inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        myrb.velocity = inputs * velocity;
+        Vector2 newPosition = myrb.position + inputs * velocity * Time.fixedDeltaTime;
+
+
+        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+        newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
+
+        myrb.position = newPosition;
     }
 
     public void DamagePlayer(int damage)    
@@ -42,5 +54,10 @@ public class DefensaController : MonoBehaviour
             Destroy(gameObject);
             gameManager.GetComponent<GameManagerController>().TerminoJuego();
         }
+    }
+
+    public void Curar(int curacion)
+    {
+        vida += curacion;
     }
 }
