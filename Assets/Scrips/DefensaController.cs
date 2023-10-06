@@ -24,6 +24,10 @@ public class DefensaController : MonoBehaviour
 
     }
 
+    public int GetVida()
+    {
+        return vida;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -49,9 +53,11 @@ public class DefensaController : MonoBehaviour
     public void DamagePlayer(int damage)    
     {
         vida -= damage;
+        gameManager.GetComponent<GameManagerController>().SetVida(vida);
         if (vida <= 0)
         {
             Destroy(gameObject);
+            gameManager.GetComponent<GameManagerController>().SetVida(vida);
             gameManager.GetComponent<GameManagerController>().TerminoJuego();
         }
     }
@@ -59,5 +65,6 @@ public class DefensaController : MonoBehaviour
     public void Curar(int curacion)
     {
         vida += curacion;
+        gameManager.GetComponent<GameManagerController>().SetVida(vida);
     }
 }
