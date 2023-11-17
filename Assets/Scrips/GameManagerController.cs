@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManagerController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject perdiste;
     [SerializeField] private Text vidaText;
+    [SerializeField] private Text perdisText;
     [SerializeField] private int vidaactual;
 
     private void Awake()
@@ -22,21 +22,21 @@ public class GameManagerController : MonoBehaviour
     }
     void Update()
     {
-        if (player != null)
-        {
             vidaText.text = "Vida: " + vidaactual.ToString();
-        }
+        
     }
 
-    public void TerminoJuego()
-    {
-            perdiste.gameObject.SetActive(true);
-    }
+
 
     public void ReiniciarNivel()
     {
         int escenaActual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(escenaActual);
 
+    }
+
+    public void setDerrota()
+    {
+        perdisText.text = " Fuiste Derrotado";
     }
 }

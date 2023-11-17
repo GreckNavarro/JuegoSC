@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1690935985991801302}
   - component: {fileID: 4699087850506110315}
-  - component: {fileID: 9067016963899346022}
   - component: {fileID: 5509857622622406824}
+  - component: {fileID: 1762104736063819234}
   m_Layer: 0
   m_Name: Vida
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 461376192353185120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.69, y: 0.48, z: 0}
-  m_LocalScale: {x: 0.47324148, y: 0.47324148, z: 0.47324148}
+  m_LocalScale: {x: 0.7785769, y: 0.7785769, z: 0.7785769}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.08018869, b: 0.81699276, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 258c07894d033b940bce8f2fafabb25c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &9067016963899346022
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461376192353185120}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &5509857622622406824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f64b60b57d4b045a563b7271bd65c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &1762104736063819234
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461376192353185120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0074832733}
+  serializedVersion: 2
+  m_Radius: 0.39523444

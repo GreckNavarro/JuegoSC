@@ -56,9 +56,10 @@ public class DefensaController : MonoBehaviour
         gameManager.GetComponent<GameManagerController>().SetVida(vida);
         if (vida <= 0)
         {
-            Destroy(gameObject);
             gameManager.GetComponent<GameManagerController>().SetVida(vida);
-            gameManager.GetComponent<GameManagerController>().TerminoJuego();
+            gameManager.GetComponent<GameManagerController>().setDerrota();
+            Destroy(gameObject);
+           
         }
     }
 
